@@ -14,7 +14,13 @@ namespace Bakery.Models
     }
   }
   public class Pastry
+  {
+    public static int pastryCost { get; set; }
+    public static int pastryCounter { get; set; }
+    public static int PastryCost(int num)
     {
-      public static int breadCost { get; set; }
+      Pastry.pastryCost = (pastryCounter % 3) == 0 ? pastryCounter * 2 : 0;
+      return Pastry.pastryCost;
     }
+  }
 }

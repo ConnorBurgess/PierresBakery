@@ -21,7 +21,7 @@ namespace Bakery.Tests
     {
       Bread newBread = new Bread();
       Bread.breadCounter = 2;
-      Assert.AreEqual(1, Bread.BreadCost(2));
+      Assert.AreEqual(1, Bread.BreadCost(Bread.breadCounter));
     }
 
   }
@@ -34,6 +34,13 @@ namespace Bakery.Tests
     {
       Pastry newPastry = new Pastry();
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+    [TestMethod]
+    public void PastryCost_BuyThreeTwoDollarsEach_True()
+    {
+      Pastry newPastry = new Pastry();
+      Pastry.pastryCounter = 6;
+      Assert.AreEqual(12, Pastry.PastryCost(Pastry.pastryCounter));
     }
   }
 }
