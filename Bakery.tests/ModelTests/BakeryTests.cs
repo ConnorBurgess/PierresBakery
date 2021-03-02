@@ -36,10 +36,17 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
     [TestMethod]
-    public void PastryCost_BuyThreeTwoDollarsEach_True()
+    public void PastryCost_BuyThreeForFiveDollars_True()
     {
       Pastry newPastry = new Pastry();
       Pastry.pastryCounter = 6;
+      Assert.AreEqual(10, Pastry.PastryCost(Pastry.pastryCounter));
+    }
+    [TestMethod]
+    public void PastryCost_ThreeForFivePlusOneForTwo_True()
+    {
+      Pastry newPastry = new Pastry();
+      Pastry.pastryCounter = 7;
       Assert.AreEqual(12, Pastry.PastryCost(Pastry.pastryCounter));
     }
   }

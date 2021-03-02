@@ -15,11 +15,13 @@ namespace Bakery.Models
   }
   public class Pastry
   {
-    public static int pastryCost { get; set; }
-    public static int pastryCounter { get; set; }
-    public static int PastryCost(int num)
+    public static double pastryCost { get; set; }
+    public static double pastryCounter { get; set; }
+    public static double PastryCost(double num)
     {
-      Pastry.pastryCost = (pastryCounter % 3) == 0 ? pastryCounter * 2 : 0;
+      Pastry.pastryCost = (pastryCounter % 3) == 0 ? (pastryCounter / 3) * 5
+        : pastryCounter > 3 ? Math.Floor(pastryCounter / 3)* 5 + (pastryCounter % 3) * 2
+          : pastryCounter * 2;
       return Pastry.pastryCost;
     }
   }
