@@ -15,10 +15,12 @@ namespace Bakery.Tests
       Bread newBread = new Bread();
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
-    
+
     [TestMethod]
     public void BreadCost_BuyTwoGetOneFree_True()
     {
+      Bread newBread = new Bread();
+       Bread.breadCounter = 2;
       Assert.AreEqual(1, Bread.BreadCost(2));
     }
 
