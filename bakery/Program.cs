@@ -21,7 +21,11 @@ namespace Main
       switch (menuInput)
       {
         case "bread":
-          Bread();
+          BreadMenu();
+          break;
+
+        case "pastry":
+          PastryMenu();
           break;
 
         case "exit":
@@ -34,12 +38,21 @@ namespace Main
           break;
       }
     }
-    public static void Bread()
+    public static void BreadMenu()
     {
       Console.WriteLine("How many bread would you like to purchase? Single loaf: $5; Current sale: Buy 2, get 1 free!");
-      string breadNum = Console.ReadLine();
-      int totalBreadCost = Bread.TotalBreadCost(int.Parse(breadNum));
-      // Console.WriteLine($"That will cost {Bread.BreadCost(breadNum)} ");
+      int breadNum = int.Parse(Console.ReadLine());
+      int totalBreadCost = Bread.TotalBreadCost(breadNum);
+      Console.WriteLine($"{breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.freeBread} free bread!");
+      Menu();
+    }
+    public static void PastryMenu()
+    {
+      Console.WriteLine("How many pastries would you like to purchase? Single pastry: $2; Current sale: Buy 3 for $5!");
+      int pastryNum = int.Parse(Console.ReadLine());
+      double totalPastryCost = Pastry.PastryCost(pastryNum);
+      Console.WriteLine($"{pastryNum} bread? Alright! That will cost ${totalPastryCost}.");
+      Menu();
     }
   }
 }
