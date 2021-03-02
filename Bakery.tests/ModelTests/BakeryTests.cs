@@ -20,9 +20,20 @@ namespace Bakery.Tests
     public void BreadCost_BuyTwoGetOneFree_True()
     {
       Bread newBread = new Bread();
-       Bread.breadCounter = 2;
+      Bread.breadCounter = 2;
       Assert.AreEqual(1, Bread.BreadCost(2));
     }
 
+  }
+  [TestClass]
+  public class PastryTests
+  {
+
+    [TestMethod]
+    public void PastryConstructor_CreatesInstanceOfBread_Bread()
+    {
+      Pastry newPastry = new Pastry();
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
   }
 }

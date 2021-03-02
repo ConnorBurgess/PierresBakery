@@ -9,8 +9,12 @@ namespace Bakery.Models
 
     public static int BreadCost(int num)
     {
-      int result = (breadCounter / 2) >= 1 ? (int)(breadCounter / 2) : 0;
-      return result;
+      Bread.breadCost = (breadCounter / 2) >= 1 ? (int)(breadCounter / 2) : 0;
+      return Bread.breadCost;
     }
   }
+  public class Pastry
+    {
+      public static int breadCost { get; set; }
+    }
 }
