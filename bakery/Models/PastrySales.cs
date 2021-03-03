@@ -11,8 +11,12 @@ namespace PastrySales.Models
       newPastry.CurrentCost = (newPastry.Counter % 3) == 0 ? (newPastry.Counter / 3) * 5
         : newPastry.Counter > 3 ? (newPastry.Counter / 3) * 5 + (newPastry.Counter % 3) * 2
           : newPastry.Counter * 2;
-
+      Pastry.TotalCost += newPastry.CurrentCost;
       return newPastry.CurrentCost;
+    }
+    public static void ClearAll()
+    {
+      Pastry.TotalCost = 0;
     }
   }
 }

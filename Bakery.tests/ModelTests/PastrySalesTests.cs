@@ -6,9 +6,12 @@ using System.Collections.Generic;
 namespace PastrySales.Tests
 {
   [TestClass]
-  public class PastryTests
+  public class PastryTests : IDisposable
   {
-
+    public void Dispose()
+    {
+      Pastry.ClearAll();
+    }
     [TestMethod]
     public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
     {
@@ -26,6 +29,13 @@ namespace PastrySales.Tests
     {
       Pastry newPastry = new Pastry();
       Assert.AreEqual(12, Pastry.PastryCost(7));
+    }
+        [TestMethod]
+    public void TotalCost_TotalCostIncrements_Int()
+    {
+      Pastry newPastry = new Pastry();
+      Pastry.PastryCost(3);
+      Assert.AreEqual(5, Pastry.TotalCost);
     }
   }
 }

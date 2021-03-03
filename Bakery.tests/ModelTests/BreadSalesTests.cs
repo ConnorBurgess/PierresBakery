@@ -9,10 +9,11 @@ namespace BreadSales.Tests
   public class BreadTests : IDisposable
   {
 
-    public void Dispose() {
+    public void Dispose()
+    {
       Bread.ClearAll();
     }
-    
+
     [TestMethod]
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
@@ -34,8 +35,8 @@ namespace BreadSales.Tests
       Bread newBread = new Bread();
       Assert.AreEqual(15, newBread.TotalBreadCost(4));
     }
-        [TestMethod]
-    public void TotalBreadCost_TotalCostIncrements_Int()
+    [TestMethod]
+    public void TotalCost_TotalCostIncrements_Int()
     {
       Bread newBread = new Bread();
       newBread.TotalBreadCost(3);
