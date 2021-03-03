@@ -25,7 +25,7 @@ Project utilizes MSTest in order to unit test C# classes in the context of a ter
 * * *
 
 ## To Do:
-* n/a
+* Input validation
 
 ## Additional comments:
 * Created on 3/1/21  
