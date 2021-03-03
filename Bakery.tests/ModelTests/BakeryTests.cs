@@ -17,11 +17,11 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void BreadCost_BuyTwoGetOneFree_True()
+    public void TotalBreadCost_BuyTwoGetOneFree_True()
     {
       Bread newBread = new Bread();
-      Bread.breadCounter = 2;
-      Assert.AreEqual(1, Bread.BreadCost(Bread.breadCounter));
+      Bread.TotalBreadCost(3);
+      Assert.AreEqual(1, Bread.freeBread);
     }
 
   }
@@ -39,15 +39,13 @@ namespace Bakery.Tests
     public void PastryCost_BuyThreeForFiveDollars_True()
     {
       Pastry newPastry = new Pastry();
-      Pastry.pastryCounter = 6;
-      Assert.AreEqual(10, Pastry.PastryCost(Pastry.pastryCounter));
+      Assert.AreEqual(10, Pastry.PastryCost(6));
     }
     [TestMethod]
     public void PastryCost_ThreeForFivePlusOneForTwo_True()
     {
       Pastry newPastry = new Pastry();
-      Pastry.pastryCounter = 7;
-      Assert.AreEqual(12, Pastry.PastryCost(Pastry.pastryCounter));
+      Assert.AreEqual(12, Pastry.PastryCost(7));
     }
   }
 }
