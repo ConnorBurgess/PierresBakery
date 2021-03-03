@@ -10,6 +10,7 @@ namespace Main
 
     public static void Main()
     {
+      for (int i = 0; i < 30; i++){Console.WriteLine("");}
       Random randnum = new Random();
       int num = randnum.Next(6);
       string[] frenchPhrases = { "Dis-moi ce que tu manges, je te dirai qui tu es.", "Un bon repa doit commencer par la faim.", "Chaque cuisinier a sa sauce!", "Quand le vin est tiré, il faut le boire.", "Un bon repas adoucit l'esprit et régénère le corps.", "Aprés bon vin, bon coussin..." };
@@ -35,7 +36,7 @@ namespace Main
     public static void Menu()
     {
       Console.ForegroundColor = ConsoleColor.Blue;
-      Console.WriteLine("Would you like to make a new bread or pastry purchase? (type: 'bread,' 'pastry,' or 'au revoir' to exit)");
+      Console.WriteLine("Would you like to make a new bread or pastry purchase? (type: 'bread,' 'pastry,', 'settle', or 'au revoir' to exit) \n");
       Console.ResetColor();
       string menuInput = Console.ReadLine();
       switch (menuInput.ToLower())
@@ -48,31 +49,40 @@ namespace Main
           PastryMenu();
           break;
 
+        case "settle":
+          Pastry.ClearAll();
+          Bread.ClearAll();
+          Console.WriteLine($"All settled up! You have {Pastry.PastryQuantity} pastries and {Bread.BreadQuantity} bread in your cart. \n");
+          PastryMenu();
+          break;
+
         case "au revoir":
           Console.WriteLine("Pierre: Au revoir!");
           break;
 
         default:
-          Console.WriteLine("Pierre only understands 'bread,' 'pastry', or 'au revoir.'");
+          Console.WriteLine("Pierre only understands 'bread,' 'pastry', 'settle', or 'au revoir.'");
           Menu();
           break;
       }
     }
     public static void BreadMenu()
     {
-      Console.WriteLine("Pierre: How many bread would you like to purchase? Un pain: $5; Current sale: Buy 2, get 1 free! Très beau!");
+      Console.WriteLine("\nPierre: How many bread would you like to purchase? Un pain: $5; Current sale: Buy 2, get 1 free! Très beau!");
       int breadNum = int.Parse(Console.ReadLine());
       Bread newBread = new Bread();
       int totalBreadCost = newBread.TotalBreadCost(breadNum);
-      Console.WriteLine($"Pierre: {breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.FreeBread} free bread! Ouah!");
+      Console.WriteLine($"\nPierre: {breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.FreeBread} free bread! Ouah!");
+      Console.WriteLine($"\nPierre: You have {Pastry.PastryQuantity} pâtisserie and {Bread.BreadQuantity} pane. The total for everything is {Pastry.TotalCost}. Exquis! \n");
       Menu();
     }
     public static void PastryMenu()
     {
-      Console.WriteLine("Pierre: How many pastries would you like to purchase? Une pâtisserie: $2; Current sale: Buy 3 for $5!");
+      Console.WriteLine("\nPierre: How many pastries would you like to purchase? Une pâtisserie: $2; Current sale: Buy 3 for $5!");
       int pastryNum = int.Parse(Console.ReadLine());
       double totalPastryCost = Pastry.PastryCost(pastryNum);
-      Console.WriteLine($"Pierre: {pastryNum} pâtisserie? Alright! That will cost ${totalPastryCost}.");
+      Console.WriteLine($"\nPierre: {pastryNum} pâtisserie? Alright! That will cost ${totalPastryCost}.");
+      Console.WriteLine($"\nPierre: You have {Pastry.PastryQuantity} pâtisserie and {Bread.BreadQuantity} pane. The total for everything is {Pastry.TotalCost}. Exquis! \n");
       Menu();
     }
   }

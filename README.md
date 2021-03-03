@@ -20,12 +20,12 @@ Project utilizes MSTest in order to unit test C# classes in the context of a ter
 * Ensure dotnet script is installed: [instructions here](https://github.com/filipw/dotnet-script)
 * Clone Repo from GitHub (Link: https://github.com/ConnorBurgess/PierresBakery.git)
 * Navigate to ./Bakery inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal
-* Type $"dotnet run" in terminal to run program
+* Type $"dotnet run" (no bling / quotes) in terminal to run program
 
 * * *
 
 ## To Do:
-* Continue to improve style and user experience
+* n/a
 
 ## Additional comments:
 * Created on 3/1/21  
