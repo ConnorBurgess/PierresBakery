@@ -8,9 +8,22 @@ namespace Main
   {
     public static void Main()
     {
-      Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      Console.WriteLine("Welcome to Pierre's Bakery!");
-      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.ForegroundColor = ConsoleColor.Blue;
+      Console.WriteLine("         Welcome to Pierre's Bakery!");
+      Console.ForegroundColor = ConsoleColor.White;
+      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.WriteLine("Bread: $5; Current sale: Buy 2, get 1 free!");
+      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("Pastry: $2; Current sale: Buy 3 for $5!");
+      Console.ForegroundColor = ConsoleColor.White;
+      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+
+
+
       Menu();
     }
 
@@ -51,7 +64,7 @@ namespace Main
       Console.WriteLine("How many pastries would you like to purchase? Single pastry: $2; Current sale: Buy 3 for $5!");
       int pastryNum = int.Parse(Console.ReadLine());
       double totalPastryCost = Pastry.PastryCost(pastryNum);
-      Console.WriteLine($"{pastryNum} bread? Alright! That will cost ${totalPastryCost}.");
+      Console.WriteLine($"{pastryNum} pastries? Alright! That will cost ${totalPastryCost}.");
       Menu();
     }
   }
