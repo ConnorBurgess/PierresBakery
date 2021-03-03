@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Bakery.Models;
+using BreadSales.Models;
+using PastrySales.Models;
 
 namespace Main
 {
@@ -16,7 +17,7 @@ namespace Main
       Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
       Console.ForegroundColor = ConsoleColor.Blue;
       Console.WriteLine("         Welcome to Pierre's Bakery!");
-      Console.ForegroundColor = ConsoleColor.White;
+      Console.ResetColor();
       Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
       Console.WriteLine($"Pierre: {frenchPhrases[num]}");
       Console.WriteLine($"({frenchPhrasesTranslated[num]})");
@@ -26,11 +27,8 @@ namespace Main
       Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
       Console.ForegroundColor = ConsoleColor.Red;
       Console.WriteLine("Pastry: $2; Current sale: Buy 3 for $5!");
-      Console.ForegroundColor = ConsoleColor.White;
+      Console.ResetColor();
       Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-
-
-
       Menu();
     }
 
@@ -62,8 +60,9 @@ namespace Main
     {
       Console.WriteLine("How many bread would you like to purchase? Single loaf: $5; Current sale: Buy 2, get 1 free!");
       int breadNum = int.Parse(Console.ReadLine());
-      int totalBreadCost = Bread.TotalBreadCost(breadNum);
-      Console.WriteLine($"{breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.freeBread} free bread!");
+      Bread newBread = new Bread();
+      int totalBreadCost = newBread.TotalBreadCost(breadNum);
+      Console.WriteLine($"{breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {newBread.FreeBread} free bread!");
       Menu();
     }
     public static void PastryMenu()
