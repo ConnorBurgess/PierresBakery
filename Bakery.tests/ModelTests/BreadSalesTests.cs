@@ -21,7 +21,7 @@ namespace BreadSales.Tests
     {
       Bread newBread = new Bread();
       newBread.TotalBreadCost(3);
-      Assert.AreEqual(1, newBread.FreeBread);
+      Assert.AreEqual(1, Bread.FreeBread);
     }
 
   }

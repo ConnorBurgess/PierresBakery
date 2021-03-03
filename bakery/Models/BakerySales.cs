@@ -5,7 +5,7 @@ namespace BakerySales.Models
   {
     public int CurrentCost { get; set; }
     public int TotalCost { get; set; }
-    public int FreeBread { get; set; }
+    public static int FreeBread { get; set; }
     public int Counter { get; set; }
   }
 }

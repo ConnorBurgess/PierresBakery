@@ -8,8 +8,8 @@ namespace BreadSales.Models
     {
       Bread newBread = new Bread();
       newBread.Counter = num;
-      newBread.FreeBread = (newBread.Counter / 3) >= 1 ? newBread.Counter / 3 : 0;
-      return newBread.CurrentCost = (newBread.Counter - newBread.FreeBread) * 5;
+      Bread.FreeBread = (newBread.Counter / 3) >= 1 ? newBread.Counter / 3 : 0;
+      return newBread.CurrentCost = (newBread.Counter - Bread.FreeBread) * 5;
     }
   }
 }

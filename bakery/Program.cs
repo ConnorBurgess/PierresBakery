@@ -62,7 +62,7 @@ namespace Main
       int breadNum = int.Parse(Console.ReadLine());
       Bread newBread = new Bread();
       int totalBreadCost = newBread.TotalBreadCost(breadNum);
-      Console.WriteLine($"{breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {newBread.FreeBread} free bread!");
+      Console.WriteLine($"{breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.FreeBread} free bread!");
       Menu();
     }
     public static void PastryMenu()
