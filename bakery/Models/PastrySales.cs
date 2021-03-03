@@ -1,18 +1,18 @@
 using System;
+using BakerySales.Models;
 namespace PastrySales.Models
 {
-  public class Pastry
+  public class Pastry : Bakery
   {
-    public static double pastryCost { get; private set; }
-    public static double pastryCounter { get; private set; }
-    public static double PastryCost(double num)
+    public static int PastryCost(int num)
     {
-      pastryCounter = num;
-      pastryCost = (pastryCounter % 3) == 0 ? (pastryCounter / 3) * 5
-        : pastryCounter > 3 ? Math.Floor(pastryCounter / 3) * 5 + (pastryCounter % 3) * 2
-          : pastryCounter * 2;
+      Pastry newPastry = new Pastry();
+      newPastry.Counter = num;
+      newPastry.CurrentCost = (newPastry.Counter % 3) == 0 ? (newPastry.Counter / 3) * 5
+        : newPastry.Counter > 3 ? (newPastry.Counter / 3) * 5 + (newPastry.Counter % 3) * 2
+          : newPastry.Counter * 2;
 
-      return pastryCost;
+      return newPastry.CurrentCost;
     }
   }
 }

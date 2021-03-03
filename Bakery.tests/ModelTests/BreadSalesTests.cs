@@ -23,6 +23,12 @@ namespace BreadSales.Tests
       newBread.TotalBreadCost(3);
       Assert.AreEqual(1, Bread.FreeBread);
     }
-
+    
+    [TestMethod]
+    public void TotalBreadCost_BuyTwoGetOneFreePlusOneForFive_True()
+    {
+      Bread newBread = new Bread();
+      Assert.AreEqual(15, newBread.TotalBreadCost(4));
+    }
   }
 }
