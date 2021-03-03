@@ -20,8 +20,8 @@ namespace BreadSales.Tests
     public void TotalBreadCost_BuyTwoGetOneFree_True()
     {
       Bread newBread = new Bread();
-      Bread.TotalBreadCost(3);
-      Assert.AreEqual(1, Bread.freeBread);
+      newBread.TotalBreadCost(3);
+      Assert.AreEqual(1, newBread.FreeBread);
     }
 
   }
