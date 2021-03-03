@@ -12,25 +12,29 @@ namespace PastrySales.Tests
     {
       Pastry.ClearAll();
     }
+
     [TestMethod]
     public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
     {
       Pastry newPastry = new Pastry();
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
+
     [TestMethod]
     public void PastryCost_BuyThreeForFiveDollars_True()
     {
       Pastry newPastry = new Pastry();
       Assert.AreEqual(10, Pastry.PastryCost(6));
     }
+
     [TestMethod]
     public void PastryCost_ThreeForFivePlusOneForTwo_True()
     {
       Pastry newPastry = new Pastry();
       Assert.AreEqual(12, Pastry.PastryCost(7));
     }
-        [TestMethod]
+
+    [TestMethod]
     public void TotalCost_TotalCostIncrements_Int()
     {
       Pastry newPastry = new Pastry();

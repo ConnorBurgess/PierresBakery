@@ -17,6 +17,7 @@ namespace BreadSales.Models
     public static void ClearAll()
     {
       Bread.TotalCost = 0;
+      Bread.BreadQuantity = 0;
     }
   }
 }
