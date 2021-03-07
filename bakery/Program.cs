@@ -54,7 +54,7 @@ namespace Main
         case "settle":
           Pastry.ClearAll();
           Bread.ClearAll();
-          Console.WriteLine($"\nAll settled up! You have {Pastry.PastryQuantity} pastries and {Bread.BreadQuantity} bread in your cart. \n");
+          Console.WriteLine($"\nAll settled up! You have {Pastry.Quantity} pastries and {Bread.Quantity} bread in your cart. \n");
           Menu();
           break;
 
@@ -77,7 +77,7 @@ namespace Main
       Bread newBread = new Bread();
       int totalBreadCost = newBread.TotalBreadCost(breadNum);
       Console.WriteLine($"\nPierre: {breadNum} bread? Alright! That will cost ${totalBreadCost}. Looks like you got yourself {Bread.FreeBread} free bread! Ouah!");
-      Console.WriteLine($"\nPierre: You have {Pastry.PastryQuantity} pâtisserie and {Bread.BreadQuantity} pane. The total for everything is ${Pastry.TotalCost}. Exquis! \n");
+    Console.WriteLine($"\nPierre: You have {Pastry.Quantity} pâtisserie and {Bread.Quantity} pane. The total for everything is ${Pastry.TotalCost}. Exquis! \n");
       Menu();
     }
     public static void PastryMenu()
@@ -86,9 +86,10 @@ namespace Main
       Console.ForegroundColor = ConsoleColor.Red;
       int pastryNum = int.Parse(Console.ReadLine());
       Console.ResetColor();
-      double totalPastryCost = Pastry.PastryCost(pastryNum);
+      Pastry newPastry = new Pastry();      
+      double totalPastryCost = newPastry.PastryCost(pastryNum);
       Console.WriteLine($"\nPierre: {pastryNum} pâtisserie? Alright! That will cost ${totalPastryCost}.");
-      Console.WriteLine($"\nPierre: You have {Pastry.PastryQuantity} pâtisserie and {Bread.BreadQuantity} pane. The total for everything is ${Pastry.TotalCost}. Exquis! \n");
+      Console.WriteLine($"\nPierre: You have {Pastry.Quantity} pâtisserie and {Bread.Quantity} pane. The total for everything is ${Pastry.TotalCost}. Exquis! \n");
       Menu();
     }
   }

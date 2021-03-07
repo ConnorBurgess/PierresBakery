@@ -24,21 +24,21 @@ namespace PastrySales.Tests
     public void PastryCost_BuyThreeForFiveDollars_True()
     {
       Pastry newPastry = new Pastry();
-      Assert.AreEqual(10, Pastry.PastryCost(6));
+      Assert.AreEqual(10, newPastry.PastryCost(6));
     }
 
     [TestMethod]
     public void PastryCost_ThreeForFivePlusOneForTwo_True()
     {
       Pastry newPastry = new Pastry();
-      Assert.AreEqual(12, Pastry.PastryCost(7));
+      Assert.AreEqual(12, newPastry.PastryCost(7));
     }
 
     [TestMethod]
     public void TotalCost_TotalCostIncrements_Int()
     {
       Pastry newPastry = new Pastry();
-      Pastry.PastryCost(3);
+      newPastry.PastryCost(3);
       Assert.AreEqual(5, Pastry.TotalCost);
     }
   }

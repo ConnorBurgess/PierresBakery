@@ -14,13 +14,14 @@ Project utilizes MSTest in order to unit test C# classes in the context of a ter
 
 * * *
 
-## Setup
+## Setup & Testing
 
 * Ensure .Net v5.0 Core is installed: [download here](https://dotnet.microsoft.com/download/dotnet/5.0)
 * Ensure dotnet script is installed: [instructions here](https://github.com/filipw/dotnet-script)
 * Clone Repo from GitHub (Link: https://github.com/ConnorBurgess/PierresBakery.git)
 * Navigate to ./Bakery inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal
 * Type $"dotnet run" (no bling / quotes) in terminal to run program
+* Navigate to ./Bakery.tests in terminal and type $"dotnet test" (no bling / quotes) in terminal to run tests
 
 * * *
 
